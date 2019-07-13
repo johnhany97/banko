@@ -65,7 +65,7 @@ class Dashboard extends Component {
                 }}
                 plaidLinkProps={{
                   clientName: 'Banko',
-                  key: 'b1ab52c3e21a03391e2297cdfef923',
+                  key: process.env.PLAID_PUBLIC_KEY,
                   env: 'development',
                   product: ['transactions'],
                   onSuccess: this.handleOnSuccess,
