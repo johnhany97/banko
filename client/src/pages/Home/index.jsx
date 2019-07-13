@@ -10,12 +10,11 @@ class Home extends Component {
         <div className="row">
           <div className="col s12 center-align">
             <h4>
-              <b>Build</b> a login/auth app with the{" "}
-              <span style={{ fontFamily: 'monospace' }}>BANKO</span> stack from scratch
+              <b>Link</b> your banking accounts and monitor your financials with
+              <span style={{ fontFamily: 'monospace' }}> BANKO</span>
             </h4>
             <p className="flow-text grey-text text-darken-1">
-              Create a (minimal) full-stack app with user authentication via
-              passport and JWTs
+              Montior all your bank accounts with the help of Plaid
             </p>
             <br />
             <div className="col s6">
