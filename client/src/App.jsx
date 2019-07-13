@@ -48,7 +48,7 @@ class App extends Component {
           <div className="App">
             <Helmet>
               <meta charSet="utf-8" />
-              <title>MERN Auth</title>
+              <title>Banko</title>
             </Helmet>
             <Navbar />
             <Switch>

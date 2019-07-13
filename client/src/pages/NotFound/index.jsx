@@ -6,7 +6,7 @@ import Helmet from 'react-helmet';
 const NotFound = () => (
   <div style={{ height: '75vh' }} className="container valign-wrapper">
     <Helmet>
-      <title>404 Not Found - MERN Auth</title>
+      <title>404 Not Found - Banko</title>
     </Helmet>
     <div className="row">
       <div className="col s12 center-align">

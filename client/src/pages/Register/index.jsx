@@ -63,7 +63,7 @@ class Register extends Component {
     return (
       <div className="container">
         <Helmet>
-          <title>Register - MERN Auth</title>
+          <title>Register - Banko</title>
         </Helmet>
         <div className="row">
           <div className="col s8 offset-s2">

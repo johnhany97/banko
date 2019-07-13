@@ -12,11 +12,17 @@ You'll need to add your config file which has the required props for your variou
 {
   "development": {
     "MONGO_URI": "mongo://name:password@some_dev_link_for_dev_db:port",
-    "SECRET_OR_KEY": "someSecretY'all"
+    "SECRET_OR_KEY": "someSecretY'all",
+    "PLAID_CLIENT_ID": "YOUR_CLIENT_ID",
+    "PLAID_SECRET": "YOUR_SECRET",
+    "PLAID_PUBLIC_KEY": "YOUR_PUBLIC_KEY"
   },
   "prod": {
     "MONGO_URI": "mongo://name:password@some_dev_link_for_prod_db:port",
-    "SECRET_OR_KEY": "someProdSecretY'all"
+    "SECRET_OR_KEY": "someProdSecretY'all",
+    "PLAID_CLIENT_ID": "YOUR_CLIENT_ID",
+    "PLAID_SECRET": "YOUR_SECRET",
+    "PLAID_PUBLIC_KEY": "YOUR_PUBLIC_KEY"
   }
 }
 ```
@@ -40,5 +46,5 @@ npm run watch
 ```
 Using Docker
 ```
-docker run -p 5000:5000 johnhany97/mern-plaid
+docker run -p 5000:5000 johnhany97/banko
 ```

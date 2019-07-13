@@ -59,7 +59,7 @@ class Login extends Component {
     return (
       <div className="container">
         <Helmet>
-          <title>Login - MERN Auth</title>
+          <title>Login - Banko</title>
         </Helmet>
         <div style={{ marginTop: '4rem' }} className="row">
           <div className="col s8 offset-s2">
