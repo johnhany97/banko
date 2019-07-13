@@ -10,6 +10,7 @@ import setup from './config/passport';
 
 // routes
 import usersRoutes from './routes/users';
+import plaidRoutes from './routes/plaid';
 
 const app = express();
 
@@ -32,7 +33,8 @@ app.use(passport.initialize());
 setup(passport);
 
 // routes
-app.use('/api/users', usersRoutes)
+app.use('/api/users', usersRoutes);
+app.use('/api/plaid', plaidRoutes);
 
 // server
 const port = process.env.PORT || 5000;
