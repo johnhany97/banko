@@ -16,7 +16,7 @@ import client from '../config/plaid';
  */
 const addAccount = (req, res) => {
   const publicToken = sanitizeHtml(req.body.public_token);
-  const userId = sanitizeHtml(req.user.id);
+  const userId = sanitizeHtml(req.user._id);
   const institution = sanitizeHtml(req.body.metadata.institution);
 
   const { name, institution_id } = institution;
@@ -31,7 +31,7 @@ const addAccount = (req, res) => {
 
         Account
           .findOne({
-            userId: req.user.id,
+            userId: req.user._id,
             institutionId: institution_id
           })
           .then(account => {
@@ -66,7 +66,7 @@ const addAccount = (req, res) => {
  */
 const deleteAccount = (req, res) => {
   Account
-    .findById(req.params.id)
+    .findById(req.params._id)
     .then(account => {
       // Delete account
       account
@@ -110,13 +110,16 @@ const getTransactions = (req, res) => {
   if (accounts) {
     accounts.forEach(function (account) {
       const accessToken = account.accessToken;
-      const institutionName = account.institutionName; client
+      const institutionName = account.institutionName;
+      client
         .getTransactions(accessToken, thirtyDaysAgo, today)
         .then(response => {
           transactions.push({
             accountName: institutionName,
             transactions: response.transactions
-          });// Don't send back response till all transactions have been added
+          });
+
+          // Don't send back response till all transactions have been added
           if (transactions.length === accounts.length) {
             res.json(transactions);
           }

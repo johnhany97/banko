@@ -9,18 +9,19 @@ const opts = {
 
 const setup = (passport) => {
   passport.use(
-    new JwtStrategy(opts, (jwt_payload, done) => {
-      User.findById(jwt_payload)
-      .then((user) => {
-        if (user) {
-          return done(null, user);
-        }
-        return done(null, false);
-      })
-      .catch((err) => {
-        console.log(err);
-        return done(null, false);
-      });
+    new JwtStrategy(opts, (jwtPayload, done) => {
+      User
+        .findById(jwtPayload.id)
+        .then((user) => {
+          if (user) {
+            return done(null, user);
+          }
+          return done(null, false);
+        })
+        .catch((err) => {
+          console.log(err);
+          return done(null, false);
+        });
     })
   );
 };

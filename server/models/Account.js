@@ -3,7 +3,7 @@ import { Schema, model } from 'mongoose';
 const AccountSchema = new Schema({
   userId: {
     type: Schema.Types.ObjectId,
-    ref: 'users',
+    ref: 'User',
   },
   accessToken: {
     type: String,
